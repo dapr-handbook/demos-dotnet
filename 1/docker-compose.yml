@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  blazorapp1:
+    image: blazorapp1
+    build:
+      context: .
+      dockerfile: BlazorApp1/Dockerfile
+
+  blazorapp1-dapr:
+    image: "daprio/daprd"
+    command: [ "./daprd", "-app-id", "blazorapp1", "-app-port", "80"]
+    depends_on:
+      - blazorapp1
+    network_mode: "service:blazorapp1"
+
+  webapi1:
+    image: webapi1
+    build:
+      context: .
+      dockerfile: WebApi1/Dockerfile
+
+  webapi1-dapr:
+    image: "daprio/daprd"
+    command: [ "./daprd", "-app-id", "webapi1", "-app-port", "80"]
+    depends_on:
+      - webapi1
+    network_mode: "service:webapi1"

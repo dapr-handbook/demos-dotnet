@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "composeLaunchServiceName": "blazorapp1",
+      "serviceActions": {
+        "blazorapp1": "StartDebugging",
+        "blazorapp1-dapr": "StartWithoutDebugging",
+        "webapi1": "StartDebugging",
+        "webapi1-dapr": "StartWithoutDebugging"
+      },
+      "composeLaunchAction": "LaunchBrowser",
+      "commandVersion": "1.0",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}"
+    }
+  }
+}
