@@ -1,0 +1,15 @@
+﻿{
+  "profiles": {
+    "dapr run": {
+      "commandName": "Executable",
+      "executablePath": "dapr",
+      "commandLineArgs": "run --app-id WebApplication1 --app-port 5000 --dapr-http-port 3500 dotnet run ",
+      "workingDirectory": ".",
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
